@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Illuminated Manuscript</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+
+<body class="im">
+  <div class="wrapper">
+    <header>
+        <!-- First brand and logo -->
+          <div class="brand">
+            <!-- Point of query: aria-hidden is used to inform screen readers (or other assistive technologies) whether an element should be ignored. 
+             So when should aria-hidden be used? When should true or false be employed?
+            疑问点：
+             aria-hidden 用来告诉屏幕阅读器（或其他辅助技术）该元素是否应该被忽略
+             所以什么时候使用 aria-hidden 呢？什么时候用true或false？ -->
+                <div class="logo" aria-hidden="true">GS</div>
+                <div>
+                    <div style="font-weight: 800">Gabriel Sun</div>
+                    <div class="muted" style="font-size: 13px">Design · Music · Art · History</div>
+                </div>
+          </div>
+          <!-- To accommodate the newly added effects in the second batch—namely, defining styles for the headings and paragraphs within the header-gradient, building upon the gradient blocks introduced in the first batch—it is necessary to remove the h1 and p elements here, allowing them to appear within the gradient blocks below.
+          为呼应第二批新增的效果：即，
+           在原先第一批新增的渐变块的基础上为 header-gradient 内的标题和段落定义样式，
+           这里需要移除 h1 和 p，让它们显示在下方的渐变块中 -->
+      <!-- <h1>Illuminated Manuscript — Gallery</h1> -->
+      <!-- <p>Simple gallery — files that begin with "Illuminated Manuscript".</p> -->
+    </header>
+
+    <!-- Note that this is the first batch of newly added gradient blocks: positioned after the header, spanning the full width horizontally and matching the width of the Navigation + Gallery section.
+    注意这里是第一批新增渐变块：位于 header 之后，横向占满与 Navigation + Gallery 相同的宽度 -->
+    <div class="header-gradient" aria-hidden="false">
+    <!-- Gradient blocks now contain both title and description text.
+     渐变块现在包含标题与说明文本 -->
+      <h1>Illuminated Manuscript · Gallery</h1>
+      <p>Embark on a visual feast from the 13th to 15th centuries—the art of the book.</p>
+    </div>
+
+    <aside>
+      <strong>Navigation</strong>
+      <ul style="margin:.5rem 0 0;padding:0 0 0 1rem">
+        <li><a href="./Home.html" style="color:var(--accent3);text-decoration:none">Home</a></li>
+        <li><a href="./Illuminated_Manuscript.html" style="color:var(--accent3);text-decoration:none">This page</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h2 style="margin-top:0">Gallery</h2>
+
+      <!-- Insert your image files (those beginning with ‘Illuminated Manuscript’) into the .gallery below.
+           Example format:
+            <img src="./Images/Illuminated Manuscript 1.png" alt="...">
+            <img src="./Images/Illuminated Manuscript 2.jpg" alt="...">
+           Do not retain any redundant placeholders or duplicate elements.
+      
+      在下面的 .gallery 中插入你的图片文件（以 "Illuminated Manuscript" 开头的文件）。
+           示例格式：
+             <img src="./Images/Illuminated Manuscript 1.png" alt="...">
+             <img src="./Images/Illuminated Manuscript 2.jpg" alt="...">
+           不要保留多余占位或重复元素。 -->
+      <div class="gallery">
+        <img src="./Images/Jean_Tinctor_Sermo_contra_sectam_Tinctor_Jean_btv1b8449040g_17.jpeg" alt="Illuminated Manuscript 1" />
+        <img src="./Images/3653236649_71a50c997e_o.jpg" alt="Illuminated Manuscript 2" />
+        <img src="./Images/20230110185935000000_093.jpg" alt="Illuminated Manuscript 3" />
+        <img src="./Images/A_Fisherman_on_the_Back_of_a_Whale_Google_Art_Project.jpg" alt="Illuminated Manuscript 4" />
+        <img src="./Images/Albucasis_Observations_sur_la_nature.jpeg" alt="Illuminated Manuscript 5" />
+        <img src="./Images/Ecodice.jpg" alt="Illuminated Manuscript 6" />
+        <img src="./Images/Roman.png" alt="Illuminated Manuscript 7" />
+        <img src="./Images/cleriadus_and_meliadice.jpg" alt="Illuminated Manuscript 8" />
+        <img src="./Images/The_Creation.jpg" alt="Illuminated Manuscript 9" />
+        <img src="./Images/Le_secret_de_l'histoire_naturelle_btv1b52508970d_20.jpg" alt="Illuminated Manuscript 10" />
+        <img src="./Images/Visconti.jpg" alt="Illuminated Manuscript 11" />
+        <img src="./Images/Nicole_Oresme_Trait_de_la_Oresme_Nicole_btv1b8451098g_9.jpeg" alt="Illuminated Manuscript 12" />
+        <img src="./Images/Frontispice_des_Economiques.jpeg" alt="Illuminated Manuscript 13" />
+        <img src="./Images/Giovanni_Colonna_Mare_historiarum_Jean_Colonna_btv1b6000905v_102.jpeg" alt="Illuminated Manuscript 14" />
+        <img src="./Images/Giovanni_Colonna_Mare_historiarum_Jean_Colonna_btv1b6000905v_707.jpeg" alt="Illuminated Manuscript 15" />
+        <img src="./Images/1.jpg" alt="Illuminated Manuscript 16" />
+        <img src="./Images/2.png" alt="Illuminated Manuscript 17" />
+        <img src="./Images/3.jpg" alt="Illuminated Manuscript 18" />
+        <img src="./Images/4.jpg" alt="Illuminated Manuscript 19" />
+        <img src="./Images/5.jpg" alt="Illuminated Manuscript 20" />
+        <img src="./Images/6.jpg" alt="Illuminated Manuscript 21" />
+        <img src="./Images/7.jpg" alt="Illuminated Manuscript 22" />
+        <img src="./Images/8.gif" alt="Illuminated Manuscript 23" />
+        <img src="./Images/9.gif" alt="Illuminated Manuscript 24" />
+        <img src="./Images/10.jpg" alt="Illuminated Manuscript 25" />
+        <img src="./Images/11.jpg" alt="Illuminated Manuscript 26" />
+        <img src="./Images/12.jpg" alt="Illuminated Manuscript 27" />
+        <img src="./Images/13.jpg" alt="Illuminated Manuscript 28" />
+        <img src="./Images/14.png" alt="Illuminated Manuscript 29" />
+        <img src="./Images/15.jpg" alt="Illuminated Manuscript 30" />
+      </div>
+    </main>
+
+    <footer>© 2025 Gabriel Sun — Illuminated Manuscript</footer>
+  </div>
+</body>
+</html>

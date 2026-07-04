@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Sun — Portfolio</title> 
+    <meta name="description" content="Portfolio and design">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="home">
+    <div class="site">
+        <header class="site-header" > 
+            <!-- 这里本来加了 role="banner" -->
+            <div class="brand">
+                <div class="logo" aria-hidden="true">GS</div>
+                <div>
+                    <div style="font-weight: 800">Gabriel Sun</div>
+                    <div class="muted" style="font-size: 13px">Design · Music · Art · History</div>
+                </div>
+            </div>
+            <nav class="site-nav" role="navigation" aria-label="Main">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About</a>
+                <a href="./Contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-label="Hero">
+                <div class="hero-inner">
+                    <div class="eyebrow">Insight</div>
+                    <h1>Transcending & Between Cultural Boundaries</h1>
+                    <p>—Inter-emotion throughout history and world outlook. <br>
+                       —A spectrum of affective expressions—simultaneously situated between sensus and multi sensus. <br>
+                       —Aims to transcend individual dimensions in pursuit of a networked articulation, catharsis, and interaction of human emotions across interconnected domains.
+
+                    </p>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap">
+                        <button class="cta" onclick="location.href='#portfolio'">View Portfolio</button>
+                        <button class="cta secondary" onclick="location.href='./Contact.html'">Get in touch</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" aria-label="Portfolio">
+                <h2>Portfolio</h2>
+                <div class="portfolio">
+                    <a class="item" href="./HREM.html" aria-label="San maurizio">
+                        <img src="./Images/San_maurizio.jpg" alt="San maurizio">
+                        <div class="caption">Historical Reenactment & Early Music</div>
+                    </a>
+                    <a class="item" href="./DAP.html" aria-label="car design">
+                        <img src="./Images/Design_week_car.png" alt="Car design">
+                        <div class="caption">Design, Art, and Photography</div>
+                    </a>
+                    <a class="item" href="./Illuminated_Manuscript.html" aria-label="Medieval illumination">
+                        <img src="./Images/Roman_de_renaud_montauban.jpg" alt="Medieval illumination">
+                        <div class="caption">Illuminated Manuscript</div>
+                    </a>
+                </div>
+                <!-- 这是 JS 要操作的动态区域 -->
+                <div id="portfolio-summary" class="portfolio-summary" aria-live="polite"></div>
+            </section>
+
+            <section id="about" class="about" aria-label="About">
+                <div class="avatar">
+                    <img src="Images/me.jpg" alt="Portrait or decorative image">
+                </div>
+                <div class="bio">
+                    <h3>About me</h3>
+                    <p class="muted">I'm Gabriel, a designer, artist, scholar, and composer who blends traditional craft with cutting-edge techniques.</p>
+                    <div class="grid-2">
+                        <div>
+                            <strong>Services</strong>
+                            <p class="muted" style="margin:6px 0 0">Languages, Consulting, Design Systems, UI/UX, Music and Art Therapy, Front-end Development, Medieval Studies</p>
+                        </div>
+                        <div>
+                            <strong>Skills</strong>
+                            <p class="muted" style="margin:6px 0 0">HTML, CSS (Flexbox & Grid), JS, FL Studio, Ableton Live, Photoshop, InDesign, Python, Sibelius</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-strip" style="display: flex; justify-content: center; align-items: center;">
+                Ars Longa, Vita Brevis
+            </section>
+            <!-- 
+            Point of confusion: 
+             Why does the style attribute “center” added to 
+             <section class="cta-strip" style="text-align: center;">
+                Ars Longa, Vita Brevis
+             </section> 
+             not take effect?
+
+            疑惑点：为什么这里面
+             <section class="cta-strip" style="text-align: center;">Ars Longa, Vita Brevis</section>
+             添加了 style 属性的center却没有效果？ 
+             -->
+        </main>
+
+        <footer>
+            <!-- Still have doubts: how should the year be written in the footer?
+            仍存疑惑：footer还有其中年代更新怎么书写？ -->
+             © 2025 Gabriel Sun — Home
+        </footer>
+    </div>
+    <!-- <script src="./main.js" defer></script> -->
+
+</body>
+</html>
