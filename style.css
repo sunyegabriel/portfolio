@@ -567,12 +567,14 @@ a {
 .originalActions {
   position: absolute;
   right: 24px;
-  bottom: 28px;
+  top: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 12px;
   pointer-events: auto;
+  transform: translateY(-50%);
+  width: 250px;
 }
 
 .originalActions .canvasModeButton {
@@ -580,12 +582,13 @@ a {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  width: 100%;
 }
 
 .canvasHint {
   position: absolute;
   right: 24px;
-  bottom: 20px;
+  bottom: 26px;
   left: 24px;
   margin: 0;
   font-size: clamp(12px, 1.35vw, 16px);
@@ -1154,15 +1157,18 @@ footer {
   .originalSketchInfo {
     left: 18px;
     right: 18px;
-    bottom: 98px;
+    bottom: 104px;
     max-width: none;
   }
 
   .originalActions {
     left: 18px;
     right: 18px;
-    bottom: 18px;
+    top: auto;
+    bottom: 54px;
     justify-content: flex-start;
+    transform: none;
+    width: auto;
   }
 
   .readingPanel {
