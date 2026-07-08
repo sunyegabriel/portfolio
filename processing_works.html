@@ -27,23 +27,18 @@
     <section class="processingCard processingCard--single" aria-label="Processing project collection">
       <div class="processingWorkRow">
         <div class="processingMedia processingCanvasWrap">
-          <div class="processingOriginalPanel" aria-label="Original A Magic Mirror of Face Flora Processing sketch">
+          <div id="face-flora-sketch" class="processingCanvas" aria-label="Interactive A Magic Mirror of Face Flora sketch">
             <div class="canvasOverlay">
               <div class="canvasTitle">
                 <strong>A Magic Mirror of Face Flora</strong>
-                <span>Original Processing sketch</span>
+                <span>Real vs Synthetic</span>
               </div>
-              <div class="originalSketchInfo">
-                <span>Webcam</span>
-                <span>OpenCV</span>
-                <span>Sound</span>
-                <span>Particles</span>
+              <div class="canvasControls">
+                <button class="canvasModeButton" type="button" id="cameraToggle">Start Camera</button>
+                <button class="canvasModeButton" type="button" id="soundToggle">Sound</button>
+                <a class="canvasModeButton" href="data/processing/FaceParticleEffect.zip" download>Download ZIP</a>
               </div>
-              <p class="canvasHint">Download the full project ZIP, unzip it, then open FaceParticleEffect.pde in Processing desktop.</p>
-              <div class="originalActions">
-                <a class="canvasModeButton" href="data/processing/FaceParticleEffect.zip" download>Download Project ZIP</a>
-                <a class="canvasModeButton" href="data/processing/FaceParticleEffect.pde" download>View PDE Source</a>
-              </div>
+              <p class="canvasHint" id="faceFloraStatus">click Start Camera to run the web version in this page</p>
             </div>
           </div>
         </div>

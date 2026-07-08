@@ -443,47 +443,6 @@ a {
   display: block;
 }
 
-.processingOriginalPanel {
-  position: relative;
-  width: min(100%, calc((100vh - 210px) * 4 / 3));
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(133, 231, 255, 0.54), transparent 11%),
-    radial-gradient(circle at 68% 32%, rgba(255, 151, 222, 0.46), transparent 12%),
-    radial-gradient(circle at 78% 72%, rgba(249, 224, 118, 0.34), transparent 16%),
-    linear-gradient(135deg, #162c62 0%, #7650df 42%, #c845b4 100%);
-}
-
-.processingOriginalPanel::before,
-.processingOriginalPanel::after {
-  content: "";
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.processingOriginalPanel::before {
-  width: 28%;
-  aspect-ratio: 1;
-  right: 12%;
-  top: 22%;
-  box-shadow:
-    -260px 160px 0 -78px rgba(255, 255, 255, 0.4),
-    -120px 86px 0 -58px rgba(255, 255, 255, 0.28),
-    46px 204px 0 -70px rgba(255, 255, 255, 0.32);
-}
-
-.processingOriginalPanel::after {
-  width: 42%;
-  aspect-ratio: 1.36;
-  left: 28%;
-  bottom: 15%;
-  border-color: rgba(255, 255, 255, 0.24);
-  transform: rotate(-18deg);
-}
-
 .canvasOverlay {
   position: absolute;
   inset: 0;
@@ -526,8 +485,12 @@ a {
 }
 
 .canvasModeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 128px;
   min-height: 46px;
+  padding: 10px 16px;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.28);
@@ -535,54 +498,13 @@ a {
   font: inherit;
   font-size: 14px;
   font-weight: 750;
+  text-decoration: none;
   cursor: pointer;
   backdrop-filter: blur(8px);
 }
 
 .canvasModeButton:hover {
   background: rgba(255, 255, 255, 0.42);
-}
-
-.originalSketchInfo {
-  position: absolute;
-  left: 28px;
-  bottom: 92px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 58%;
-}
-
-.originalSketchInfo span {
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.48);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 750;
-  backdrop-filter: blur(8px);
-}
-
-.originalActions {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 12px;
-  pointer-events: auto;
-  transform: translateY(-50%);
-  width: 250px;
-}
-
-.originalActions .canvasModeButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  width: 100%;
 }
 
 .canvasHint {
@@ -1067,10 +989,6 @@ footer {
     width: 100%;
   }
 
-  .processingOriginalPanel {
-    width: 100%;
-  }
-
   .processingCodePanel {
     height: auto;
     max-height: 360px;
@@ -1152,23 +1070,6 @@ footer {
     min-width: 104px;
     min-height: 40px;
     font-size: 12px;
-  }
-
-  .originalSketchInfo {
-    left: 18px;
-    right: 18px;
-    bottom: 104px;
-    max-width: none;
-  }
-
-  .originalActions {
-    left: 18px;
-    right: 18px;
-    top: auto;
-    bottom: 54px;
-    justify-content: flex-start;
-    transform: none;
-    width: auto;
   }
 
   .readingPanel {
