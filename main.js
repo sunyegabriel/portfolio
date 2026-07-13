@@ -15,3 +15,38 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+document.body.classList.add('media-protection');
+
+const protectedMediaSelector = 'img, canvas, video';
+
+document.querySelectorAll(protectedMediaSelector).forEach((media) => {
+  media.setAttribute('draggable', 'false');
+  media.setAttribute('loading', media.getAttribute('loading') || 'lazy');
+});
+
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
+});
+
+document.addEventListener('dragstart', (event) => {
+  if (event.target.closest(protectedMediaSelector)) event.preventDefault();
+});
+
+document.addEventListener('copy', (event) => {
+  if (window.getSelection().toString().length) return;
+  event.preventDefault();
+});
+
+document.addEventListener('keydown', (event) => {
+  const key = event.key.toLowerCase();
+  const blocked =
+    key === 'f12' ||
+    (event.ctrlKey && event.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+    (event.ctrlKey && ['s', 'u'].includes(key));
+
+  if (blocked) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+});

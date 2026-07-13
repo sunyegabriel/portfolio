@@ -21,6 +21,21 @@ body {
   background: var(--bg);
 }
 
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+body.media-protection {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body.media-protection img {
+  pointer-events: none;
+}
+
 a {
   color: inherit;
 }
