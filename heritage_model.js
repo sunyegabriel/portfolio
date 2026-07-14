@@ -4,7 +4,6 @@ import { MTLLoader } from './vendor/three/MTLLoader.js';
 import { OBJLoader } from './vendor/three/OBJLoader.js';
 
 const MODEL_PATH = 'images/culturalheritage/stuttgart/';
-const MODEL_SCREEN_LEVEL_FIX = Math.PI / 12;
 
 document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   const viewport = modelBlock.querySelector('[data-model-viewport]');
@@ -15,6 +14,7 @@ document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   scene.background = new THREE.Color(0xf4f7fb);
 
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 5000);
+  camera.up.set(0, 0, 1);
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -34,20 +34,19 @@ document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   scene.add(ambient);
 
   const keyLight = new THREE.DirectionalLight(0xffffff, 2.6);
-  keyLight.position.set(160, 220, 180);
+  keyLight.position.set(160, -180, 220);
   keyLight.castShadow = true;
   scene.add(keyLight);
 
   const fillLight = new THREE.DirectionalLight(0xb8d7ff, 1.2);
-  fillLight.position.set(-180, 130, -150);
+  fillLight.position.set(-180, 150, 120);
   scene.add(fillLight);
 
   const floor = new THREE.Mesh(
     new THREE.CircleGeometry(220, 96),
     new THREE.MeshStandardMaterial({ color: 0xe8edf5, roughness: 0.95, metalness: 0 })
   );
-  floor.rotation.x = -Math.PI / 2;
-  floor.position.y = -35;
+  floor.position.z = -4;
   floor.receiveShadow = true;
   scene.add(floor);
 
@@ -71,23 +70,16 @@ document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   }
 
   function frameObject(object) {
-    // Tinkercad OBJ files are exported Z-up; Three.js uses Y-up.
-    object.rotation.set(-Math.PI / 2, 0, 0);
-    object.updateMatrixWorld(true);
-
     const sourceBox = new THREE.Box3().setFromObject(object);
     const center = sourceBox.getCenter(new THREE.Vector3());
     object.position.sub(center);
-
-    object.rotateY(-Math.PI / 12);
-    object.rotateZ(MODEL_SCREEN_LEVEL_FIX);
     object.updateMatrixWorld(true);
 
     const box = new THREE.Box3().setFromObject(object);
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
 
-    floor.position.y = box.min.y - 4;
+    floor.position.z = box.min.z - 4;
 
     modelViewSize = maxDim * 1.24;
     resize();
@@ -95,7 +87,7 @@ document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
     const distance = maxDim * 2.2;
     camera.near = Math.max(0.1, maxDim / 100);
     camera.far = maxDim * 20;
-    camera.position.set(distance * 0.34, distance * 0.16, distance * 1.15);
+    camera.position.set(distance * 0.28, -distance * 1.18, distance * 0.42);
     camera.zoom = 1;
     camera.updateProjectionMatrix();
 
