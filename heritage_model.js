@@ -4,6 +4,7 @@ import { MTLLoader } from './vendor/three/MTLLoader.js';
 import { OBJLoader } from './vendor/three/OBJLoader.js';
 
 const MODEL_PATH = 'images/culturalheritage/stuttgart/';
+const MODEL_SCREEN_LEVEL_FIX = -Math.PI / 18;
 
 document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   const viewport = modelBlock.querySelector('[data-model-viewport]');
@@ -79,6 +80,7 @@ document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
     object.position.sub(center);
 
     object.rotateY(-Math.PI / 12);
+    object.rotateZ(MODEL_SCREEN_LEVEL_FIX);
     object.updateMatrixWorld(true);
 
     const box = new THREE.Box3().setFromObject(object);
