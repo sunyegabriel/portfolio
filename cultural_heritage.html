@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cultural Heritage | Gabriel Sun</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <nav class="navPill">
+      <a class="brand" href="home.html"><span class="logo">GS</span><span><b>Gabriel Sun</b><small>Design &middot; Music &middot; Art &middot; History</small></span></a>
+      <div class="navSpacer"></div>
+      <div class="navLinks"><a href="index.html">Opening</a><a class="active" href="home.html#portfolio">Portfolio</a><a href="home.html#about">About</a><a href="contact.html">Contact</a></div>
+    </nav>
+  </header>
+  <main class="heritagePage">
+    <section class="heritageHero">
+      <div class="heritageHeroInner">
+        <a class="heritageBack" href="home.html#portfolio">&larr; Back to Projects</a>
+        <p class="heritageKicker">Cultural Heritage</p>
+        <h1>Memories &amp; Vestiges</h1>
+        <p class="heritageLead">A growing atlas for ancient architecture, art, objects, and cultural memory across regions and eras.</p>
+        <form class="heritageSearch" role="search">
+          <label for="heritage-search">Search places, objects, materials, or sites</label>
+          <div>
+            <input id="heritage-search" type="search" data-heritage-search placeholder="Search the archive" autocomplete="off" />
+            <button type="button" data-heritage-reset>Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="heritageBrowse" aria-label="Cultural Heritage archive">
+      <aside class="heritageFilters">
+        <div class="heritageFilterTop">
+          <h2>Filter your search</h2>
+          <span>Explore by era, region, and object type.</span>
+        </div>
+        <fieldset class="heritageFilterGroup">
+          <legend>Era</legend>
+          <label><input type="checkbox" data-heritage-filter data-group="era" value="4000-2500-bce"> 4000-2500 BCE</label>
+          <label><input type="checkbox" data-heritage-filter data-group="era" value="2500-bce-1-ce"> 2500 BCE-1 CE</label>
+          <label><input type="checkbox" data-heritage-filter data-group="era" value="1-1000-ce"> 1-1000 CE</label>
+          <label><input type="checkbox" data-heritage-filter data-group="era" value="1000-1900-ce"> 1000-1900 CE</label>
+        </fieldset>
+        <fieldset class="heritageFilterGroup">
+          <legend>Location</legend>
+          <label><input type="checkbox" data-heritage-filter data-group="location" value="eurasia"> Eurasia</label>
+          <label><input type="checkbox" data-heritage-filter data-group="location" value="africa"> Africa</label>
+          <label><input type="checkbox" data-heritage-filter data-group="location" value="americas"> Americas</label>
+          <label><input type="checkbox" data-heritage-filter data-group="location" value="oceania"> Oceania</label>
+        </fieldset>
+        <fieldset class="heritageFilterGroup">
+          <legend>Type</legend>
+          <label><input type="checkbox" data-heritage-filter data-group="type" value="architecture"> Architecture</label>
+          <label><input type="checkbox" data-heritage-filter data-group="type" value="costume"> Costume</label>
+          <label><input type="checkbox" data-heritage-filter data-group="type" value="manuscripts"> Manuscripts</label>
+          <label><input type="checkbox" data-heritage-filter data-group="type" value="painting"> Painting</label>
+          <label><input type="checkbox" data-heritage-filter data-group="type" value="ceramics"> Ceramics</label>
+        </fieldset>
+      </aside>
+
+      <div class="heritageResults">
+        <div class="heritageResultsHeader">
+          <p data-heritage-count>4 objects to explore</p>
+          <span>No map, only a focused object archive.</span>
+        </div>
+        <div class="heritageGrid">
+          <a class="heritageObjectCard" href="konig_von_england_stuttgart.html" data-heritage-card data-era="1000-1900-ce" data-location="eurasia" data-type="architecture" data-search="Konig König von England Stuttgart architecture Eurasia 1000 1900 hotel heritage">
+            <img src="images/culturalheritage/stuttgart/koenigvonengland.jpg" alt="König von England, Stuttgart">
+            <div>
+              <p class="heritageObjectMeta">Architecture &middot; Eurasia &middot; 1000-1900 CE</p>
+              <h3>König von England, Stuttgart</h3>
+              <p>A heritage object page for a Stuttgart architectural landmark and its visual afterlives.</p>
+            </div>
+          </a>
+          <a class="heritageObjectCard" href="old_stuttgart_photos_reconstruction.html" data-heritage-card data-era="1000-1900-ce" data-location="eurasia" data-type="architecture" data-search="Old Stuttgart Photos Reconstruction architecture Eurasia 1000 1900 coloured photograph">
+            <img src="images/culturalheritage/stuttgart/koenigvonenglandcoloured.png" alt="Old Stuttgart Photos Reconstruction">
+            <div>
+              <p class="heritageObjectMeta">Architecture &middot; Eurasia &middot; 1000-1900 CE</p>
+              <h3>Old Stuttgart Photos Reconstruction</h3>
+              <p>A reconstruction-led study of historical urban photographs and memory of place.</p>
+            </div>
+          </a>
+          <a class="heritageObjectCard" href="st_mary_del_dam_dublin.html" data-heritage-card data-era="1000-1900-ce" data-location="eurasia" data-type="architecture" data-search="St. Mary del Dam Dublin architecture Eurasia 1000 1900 medieval church">
+            <img src="images/culturalheritage/strasbourg.jpg" alt="St. Mary del Dam, Dublin">
+            <div>
+              <p class="heritageObjectMeta">Architecture &middot; Eurasia &middot; 1000-1900 CE</p>
+              <h3>St. Mary del Dam, Dublin</h3>
+              <p>A page for researching vanished, transformed, or partially remembered sacred architecture.</p>
+            </div>
+          </a>
+          <a class="heritageObjectCard" href="manichaean_book_leaf.html" data-heritage-card data-era="1-1000-ce" data-location="eurasia" data-type="manuscripts" data-search="Leaf from a Manichaean book MIK III 4979 Xinjiang Gaochang site manuscripts Eurasia 1 1000">
+            <img src="images/Albucasis_Observations_sur_la_nature.jpeg" alt="Leaf from a Manichaean book">
+            <div>
+              <p class="heritageObjectMeta">Manuscripts &middot; Eurasia &middot; 1-1000 CE</p>
+              <h3>Leaf from a Manichaean book MIK III 4979, Xinjiang Gaochang site</h3>
+              <p>A manuscript-object entry for fragments, mobility, belief, and image-text transmission.</p>
+            </div>
+          </a>
+        </div>
+        <p class="heritageNoResults" data-heritage-empty hidden>No matching objects yet. Try removing a filter or searching another term.</p>
+      </div>
+    </section>
+  </main>
+  <footer>&copy; 2025 Gabriel Sun | Cultural Heritage</footer>
+  <script src="main.js"></script>
+  <script src="cultural_heritage.js"></script>
+</body>
+</html>
