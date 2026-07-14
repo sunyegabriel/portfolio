@@ -16,6 +16,62 @@ filterButtons.forEach((button) => {
   });
 });
 
+document.querySelectorAll('[data-heritage-reveal]').forEach((reveal) => {
+  const stage = reveal.querySelector('.heritageRevealStage');
+  const handle = reveal.querySelector('[data-heritage-handle]');
+  const reset = reveal.querySelector('[data-heritage-reset-view]');
+  let dragging = false;
+
+  const setSplit = (clientX) => {
+    const rect = stage.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    stage.style.setProperty('--split', `${ratio * 100}%`);
+  };
+
+  const activate = () => {
+    reveal.classList.add('is-active');
+    stage.style.setProperty('--split', '100%');
+  };
+
+  reveal.addEventListener('click', () => {
+    if (!reveal.classList.contains('is-active')) activate();
+  });
+
+  reset?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    reveal.classList.remove('is-active');
+    stage.style.setProperty('--split', '100%');
+  });
+
+  reveal.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      activate();
+    }
+  });
+
+  handle?.addEventListener('pointerdown', (event) => {
+    event.preventDefault();
+    if (!reveal.classList.contains('is-active')) activate();
+    dragging = true;
+    handle.setPointerCapture(event.pointerId);
+    setSplit(event.clientX);
+  });
+
+  handle?.addEventListener('pointermove', (event) => {
+    if (dragging) setSplit(event.clientX);
+  });
+
+  handle?.addEventListener('pointerup', (event) => {
+    dragging = false;
+    handle.releasePointerCapture(event.pointerId);
+  });
+
+  handle?.addEventListener('pointercancel', () => {
+    dragging = false;
+  });
+});
+
 document.body.classList.add('media-protection');
 
 const protectedMediaSelector = 'img, canvas, video';
