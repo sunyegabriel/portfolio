@@ -64,18 +64,27 @@ document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   }
 
   function frameObject(object) {
+    // Tinkercad OBJ files are exported Z-up; Three.js uses Y-up.
+    object.rotation.set(-Math.PI / 2, 0, 0);
+    object.updateMatrixWorld(true);
+
+    const sourceBox = new THREE.Box3().setFromObject(object);
+    const center = sourceBox.getCenter(new THREE.Vector3());
+    object.position.sub(center);
+
+    object.rotateY(-Math.PI / 5);
+    object.updateMatrixWorld(true);
+
     const box = new THREE.Box3().setFromObject(object);
     const size = box.getSize(new THREE.Vector3());
-    const center = box.getCenter(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
 
-    object.position.sub(center);
-    object.rotation.y = -Math.PI / 5;
+    floor.position.y = box.min.y - 4;
 
     const distance = maxDim * 1.55;
     camera.near = Math.max(0.1, maxDim / 100);
     camera.far = maxDim * 20;
-    camera.position.set(distance * 0.95, distance * 0.52, distance * 1.15);
+    camera.position.set(distance * 0.95, distance * 0.62, distance * 1.15);
     camera.updateProjectionMatrix();
 
     controls.target.set(0, 0, 0);
