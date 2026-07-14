@@ -4,7 +4,7 @@ import { MTLLoader } from './vendor/three/MTLLoader.js';
 import { OBJLoader } from './vendor/three/OBJLoader.js';
 
 const MODEL_PATH = 'images/culturalheritage/stuttgart/';
-const MODEL_SCREEN_LEVEL_FIX = -Math.PI / 18;
+const MODEL_SCREEN_LEVEL_FIX = Math.PI / 12;
 
 document.querySelectorAll('[data-heritage-model]').forEach((modelBlock) => {
   const viewport = modelBlock.querySelector('[data-model-viewport]');
