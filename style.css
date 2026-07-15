@@ -1460,6 +1460,31 @@ footer {
   letter-spacing: 0;
 }
 
+.heritageIlluminatedTitle {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.heritageIlluminatedTitle .titleName {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  margin-right: 0.12em;
+  vertical-align: baseline;
+}
+
+.heritageIlluminatedTitle .titleName img {
+  width: clamp(88px, 11vw, 148px);
+  height: auto;
+  margin-right: -0.16em;
+  transform: translateY(0.12em);
+}
+
+.heritageIlluminatedTitle .titleName span {
+  font-family: "UnifrakturCook", "UnifrakturMaguntia", "Old English Text MT", "Blackletter", Georgia, serif;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
 .heritageEssay h3 {
   margin: 46px 0 16px;
   font-size: clamp(24px, 2.5vw, 34px);
@@ -1488,6 +1513,30 @@ footer {
 
 .heritageEssay em {
   font-style: italic;
+}
+
+.parchmentPassage {
+  margin: 34px 0 48px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(137, 94, 44, 0.28);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.38), transparent 28%),
+    radial-gradient(circle at 86% 82%, rgba(129, 82, 37, 0.12), transparent 34%),
+    linear-gradient(135deg, #f5dfc5 0%, #f1d1ac 48%, #ead7bd 100%);
+  box-shadow: inset 0 0 42px rgba(124, 79, 37, 0.13), 0 18px 46px rgba(71, 44, 20, 0.12);
+}
+
+.parchmentPassage p {
+  margin: 0;
+  color: #2f241c;
+}
+
+.parchmentInitial {
+  float: left;
+  width: clamp(72px, 10vw, 122px);
+  height: auto;
+  margin: 0.18em 0.22em 0 0;
 }
 
 .heritageReveal {
