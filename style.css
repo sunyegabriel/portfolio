@@ -916,6 +916,267 @@ a {
   border-radius: 12px;
 }
 
+.logoProjectCover {
+  width: min(100%, 360px);
+}
+
+.logoProjectCover img {
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: #f7f1e5;
+}
+
+.concertPosterCover img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+}
+
+.concertArchiveGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.concertArchiveGrid figure {
+  margin: 0;
+}
+
+.concertArchiveGrid img {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #f4f7fb;
+  box-shadow: 0 22px 58px rgba(16, 24, 40, 0.12);
+}
+
+.concertArchiveGrid figcaption,
+.concertVideoFrame + .sectionDesc {
+  margin-top: 12px;
+}
+
+.concertArchiveGrid figcaption {
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.concertVideoSection .sectionDesc + .sectionDesc {
+  margin-top: 18px;
+}
+
+.concertVideoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 24px 0 28px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #050505;
+  box-shadow: 0 28px 70px rgba(16, 24, 40, 0.18);
+}
+
+.concertVideoFrame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.baoenCaseHero {
+  margin-top: 44px;
+  padding: 26px;
+  border-radius: 28px;
+  color: #efe7d6;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(180, 125, 53, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 24%, rgba(47, 128, 255, 0.12), transparent 24%),
+    linear-gradient(135deg, #090909, #151412 62%, #211b14);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.18);
+}
+
+.baoenCaseNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 58px;
+  color: #b2a890;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.baoenCaseNav a {
+  color: #efe7d6;
+  text-decoration: none;
+  border: 1px solid rgba(239, 231, 214, 0.18);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.baoenCaseIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  gap: 54px;
+  align-items: end;
+}
+
+.baoenKicker,
+.baoenCaseStep {
+  color: #b2a890;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.baoenCaseIntro h1 {
+  max-width: 9.6ch;
+  margin: 18px 0 22px;
+  font-size: clamp(54px, 8vw, 112px);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.baoenLead {
+  max-width: 690px;
+  margin: 0 0 24px;
+  color: #cfc4ae;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.baoenLogoPlate {
+  margin: 0;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(239, 231, 214, 0.14);
+  background: rgba(22, 21, 18, 0.72);
+}
+
+.baoenLogoPlate img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.baoenLogoCircleFigure,
+.baoenWebLogoFigure {
+  margin: 8px 0 24px;
+}
+
+.baoenLogoCircleFigure {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.baoenLogoCircle {
+  display: grid;
+  place-items: center;
+  width: min(240px, 72vw);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #050505;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.24);
+}
+
+.baoenLogoCircle img {
+  display: block;
+  width: 68%;
+  height: auto;
+}
+
+.baoenWebLogoFigure img {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #0c0c0b;
+  box-shadow: 0 20px 48px rgba(16, 24, 40, 0.12);
+}
+
+.baoenLogoCircleFigure figcaption,
+.baoenWebLogoFigure figcaption {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.baoenCaseStudy {
+  margin-top: 34px;
+  padding: 18px 0 80px;
+}
+
+.baoenCaseColumn {
+  position: relative;
+  display: grid;
+  gap: 28px;
+}
+
+.baoenCaseColumn::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 22px;
+  width: 2px;
+  background: linear-gradient(#2f80ff, rgba(47, 128, 255, 0));
+}
+
+.baoenCaseCard {
+  position: relative;
+  margin-left: 58px;
+  padding: 30px 34px;
+  border-radius: 22px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(250, 247, 239, 0.86)),
+    #f7f1e5;
+  box-shadow: 0 22px 54px rgba(16, 24, 40, 0.08);
+}
+
+.baoenCaseCard::before {
+  content: "";
+  position: absolute;
+  left: -46px;
+  top: 36px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #2f80ff;
+  box-shadow: 0 0 0 10px rgba(47, 128, 255, 0.12);
+}
+
+.baoenCaseCard h2 {
+  margin: 10px 0 18px;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1;
+}
+
+.baoenCaseCard p {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.baoenCaseCard p + p {
+  margin-top: 18px;
+}
+
 .pageMeta {
   font-size: 18px;
   margin-bottom: 18px;
@@ -1837,6 +2098,34 @@ footer {
   .readableArtCover {
     width: min(100%, 280px);
     justify-self: start;
+  }
+
+  .baoenCaseIntro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .baoenCaseNav {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 36px;
+  }
+
+  .baoenCaseColumn::before {
+    left: 14px;
+  }
+
+  .baoenCaseCard {
+    margin-left: 42px;
+    padding: 26px 24px;
+  }
+
+  .baoenCaseCard::before {
+    left: -35px;
+  }
+
+  .concertArchiveGrid {
+    grid-template-columns: 1fr;
   }
 
   .projectsGrid {
