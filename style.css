@@ -205,8 +205,8 @@ a {
 .transcendingMark {
   position: relative;
   width: min(100%, 620px);
-  min-height: 255px;
-  margin: 28px 0 48px;
+  min-height: 285px;
+  margin: 28px 0 46px;
   color: #111827;
   line-height: 0.9;
 }
@@ -218,7 +218,8 @@ a {
 
 .markTop {
   top: 0;
-  left: 15%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(46px, 5.4vw, 72px);
   font-weight: 700;
@@ -226,28 +227,28 @@ a {
 }
 
 .markAmp {
-  top: 58px;
-  left: 46%;
+  top: 82px;
+  left: 50%;
   color: #111827;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(42px, 5vw, 70px);
+  font-size: clamp(32px, 3.8vw, 50px);
   font-weight: 700;
-  transform: rotate(-4deg);
+  transform: translateX(-50%) rotate(-4deg);
 }
 
 .markBetween {
-  top: 128px;
-  left: 4%;
+  top: 184px;
+  left: 0;
   color: #050b16;
-  font-size: clamp(34px, 4.2vw, 58px);
+  font-size: clamp(32px, 3.8vw, 50px);
   font-weight: 800;
   letter-spacing: 0;
   transform: none;
 }
 
 .markCultural {
-  top: 106px;
-  left: 50%;
+  top: 150px;
+  left: 47%;
   color: var(--blue);
   font-size: clamp(38px, 4.6vw, 62px);
   font-weight: 850;
@@ -255,8 +256,8 @@ a {
 }
 
 .markBoundaries {
-  top: 165px;
-  left: 45%;
+  top: 226px;
+  left: 40%;
   color: var(--blue);
   font-size: clamp(38px, 4.6vw, 62px);
   font-weight: 850;
@@ -1024,9 +1025,9 @@ a {
 
 .baoenCaseIntro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  grid-template-columns: minmax(0, 0.98fr) minmax(330px, 0.72fr);
   gap: 54px;
-  align-items: end;
+  align-items: stretch;
 }
 
 .baoenKicker,
@@ -1067,6 +1068,60 @@ a {
   display: block;
   width: 100%;
   border-radius: 18px;
+}
+
+.baoenModelPanel {
+  position: relative;
+  min-height: 620px;
+  align-self: stretch;
+  margin: -26px -26px -26px 0;
+  overflow: hidden;
+  border-radius: 0 28px 28px 0;
+  background:
+    radial-gradient(circle at 52% 28%, rgba(238, 219, 179, 0.2), transparent 10%),
+    radial-gradient(circle at 50% 54%, rgba(124, 92, 255, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(7, 7, 7, 0.56), rgba(3, 3, 3, 0.88));
+}
+
+.baoenModelPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(14, 13, 11, 0.38), transparent 22%),
+    radial-gradient(circle at 50% 50%, transparent 0 34%, rgba(14, 13, 11, 0.42) 72%);
+}
+
+#baoen-model-canvas {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+
+.baoenModelStatus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  max-width: 260px;
+  padding: 12px 16px;
+  border: 1px solid rgba(239, 231, 214, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 12, 11, 0.78);
+  color: #efe7d6;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.baoenModelStatus.is-hidden {
+  display: none;
 }
 
 .baoenLogoCircleFigure,
@@ -2105,6 +2160,12 @@ footer {
     gap: 28px;
   }
 
+  .baoenModelPanel {
+    min-height: 520px;
+    margin: 0;
+    border-radius: 22px;
+  }
+
   .baoenCaseNav {
     align-items: flex-start;
     flex-direction: column;
@@ -2264,38 +2325,40 @@ footer {
   }
 
   .transcendingMark {
-    min-height: 205px;
+    min-height: 245px;
     margin: 22px 0 42px;
   }
 
   .markTop {
     top: 0;
-    left: 8%;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 36px;
   }
 
   .markAmp {
-    top: 43px;
-    left: 42%;
-    font-size: 42px;
+    top: 58px;
+    left: 50%;
+    font-size: 34px;
+    transform: translateX(-50%) rotate(-4deg);
   }
 
   .markBetween {
-    top: 104px;
+    top: 146px;
     left: 0;
-    font-size: 31px;
+    font-size: 34px;
     transform: none;
   }
 
   .markCultural {
-    top: 84px;
-    left: 47%;
+    top: 122px;
+    left: 43%;
     font-size: 34px;
   }
 
   .markBoundaries {
-    top: 134px;
-    left: 38%;
+    top: 186px;
+    left: 34%;
     font-size: 34px;
   }
 

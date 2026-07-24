@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Logo for Great Bao'en Temple Website | Gabriel Sun</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./assets/baoenmodel/three.module.js"
+      }
+    }
+  </script>
 </head>
 <body>
   <header class="top">
@@ -32,9 +39,10 @@
             <span class="tagChip">Website</span>
           </div>
         </div>
-        <figure class="baoenLogoPlate">
-          <img src="images/visualdesign/logoforgreatbaoen/logoonweb.png" alt="Great Bao'en Temple logo shown on the website">
-        </figure>
+        <aside class="baoenModelPanel" aria-label="Interactive 3D Porcelain Tower model">
+          <canvas id="baoen-model-canvas"></canvas>
+          <div class="baoenModelStatus" id="baoen-model-status">Loading 3D tower...</div>
+        </aside>
       </div>
     </section>
 
@@ -87,6 +95,7 @@
   </main>
   <footer>&copy; 2025 Gabriel Sun | Logo for Great Bao'en Temple Website</footer>
   <script src="main.js"></script>
+  <script type="module" src="great_baoen_temple_logo_model.js"></script>
 </body>
 </html>
 
