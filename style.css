@@ -996,6 +996,139 @@ body.processingPage .sectionTag {
   border-radius: 12px;
 }
 
+.readableArtPage {
+  --readable-red: #ad2d26;
+  --readable-rose: #c98d8a;
+  --readable-rose-soft: rgba(201, 141, 138, 0.22);
+}
+
+.readableArtPage .logo,
+.readableArtPage .navLinks a.active,
+.readableArtPage .sectionTag {
+  background: var(--readable-red);
+}
+
+.readableArtPage .navLinks a:hover {
+  background: var(--readable-rose);
+  color: #fff;
+}
+
+.readableArtPage .sectionTag {
+  box-shadow: 0 4px 12px rgba(173, 45, 38, 0.22);
+}
+
+.readableArtPage .tagChip {
+  border-color: rgba(173, 45, 38, 0.42);
+  color: var(--readable-red);
+}
+
+.readableArtPage .tagChip:hover {
+  background: var(--readable-rose);
+  border-color: var(--readable-rose);
+  color: #fff;
+}
+
+.readableArtPage .blue {
+  color: var(--readable-red);
+}
+
+.readableArtCaseHero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.75fr);
+  gap: clamp(42px, 8vw, 128px);
+  align-items: center;
+  width: 100vw;
+  min-height: clamp(620px, 68vw, 840px);
+  margin: 44px 0 0 calc(50% - 50vw);
+  padding: clamp(56px, 7vw, 110px) max(clamp(34px, 6vw, 92px), calc((100vw - 1440px) / 2 + 92px));
+  background-image:
+    linear-gradient(90deg, rgba(248, 243, 234, 0.94) 0%, rgba(248, 243, 234, 0.82) 42%, rgba(248, 243, 234, 0.68) 100%),
+    url("images/5.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.readableArtHeroTitle,
+.readableArtHeroMeta {
+  position: relative;
+  z-index: 1;
+}
+
+.readableArtKicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 34px;
+  color: var(--readable-red);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.readableArtKicker::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+}
+
+.readableArtHeroTitle h1 {
+  max-width: 680px;
+  margin: 0 0 28px;
+  color: #18110d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(72px, 8.6vw, 156px);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+}
+
+.readableArtHeroTitle h1 span {
+  display: block;
+  color: var(--readable-red);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.readableArtSubtitle {
+  max-width: 520px;
+  margin: 0;
+  color: #766f65;
+  font-size: clamp(18px, 1.3vw, 22px);
+  line-height: 1.55;
+}
+
+.readableArtHeroMeta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 54px;
+  align-self: center;
+  color: #766f65;
+  text-align: center;
+}
+
+.readableArtHeroMeta article {
+  display: grid;
+  gap: 14px;
+}
+
+.readableArtHeroMeta span {
+  color: var(--readable-red);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.readableArtHeroMeta p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .logoProjectCover {
   width: min(100%, 360px);
 }
@@ -1253,9 +1386,7 @@ body.concertCasePage {
   --atlas-ink: #10233f;
   --atlas-muted: #53667b;
   --atlas-line: rgba(35, 101, 164, 0.18);
-  background:
-    radial-gradient(circle at 86% 12%, rgba(35, 158, 224, 0.18), transparent 28%),
-    linear-gradient(180deg, #fbfdff 0%, var(--atlas-paper) 54%, #edf8ff 100%);
+  background: var(--atlas-soft);
   color: var(--atlas-ink);
 }
 
@@ -1292,9 +1423,7 @@ body.concertCasePage {
   min-height: clamp(560px, 64vw, 820px);
   margin: 24px 0 0;
   padding: clamp(54px, 8vw, 110px) clamp(42px, 6vw, 84px);
-  background:
-    radial-gradient(circle at 78% 25%, rgba(35, 158, 224, 0.36), transparent 26%),
-    linear-gradient(135deg, var(--atlas-blue), #164a86 68%, #10365f);
+  background: var(--atlas-blue);
   color: #fff;
 }
 
@@ -1496,7 +1625,8 @@ body.concertCasePage {
 body.baoenCasePage {
   --baoen-paper: #f2eee6;
   --baoen-ink: #1b1511;
-  --baoen-red: #a52b24;
+  --baoen-red: #ad2d26;
+  --baoen-rose: #c98d8a;
   --baoen-muted: #887d70;
   --baoen-line: #d7cdbd;
   background: var(--baoen-paper);
@@ -1510,6 +1640,28 @@ body.baoenCasePage {
 .baoenCasePage .navPill {
   max-width: min(1180px, calc(100vw - 48px));
   background: rgba(255, 255, 255, 0.94);
+}
+
+.baoenCasePage .logo,
+.baoenCasePage .navLinks a.active,
+.baoenCasePage .sectionTag {
+  background: var(--baoen-red);
+}
+
+.baoenCasePage .navLinks a:hover {
+  background: var(--baoen-rose);
+  color: #fff;
+}
+
+.baoenCasePage .tagChip {
+  border-color: rgba(173, 45, 38, 0.42);
+  color: var(--baoen-red);
+}
+
+.baoenCasePage .tagChip:hover {
+  background: var(--baoen-rose);
+  border-color: var(--baoen-rose);
+  color: #fff;
 }
 
 .baoenCasePageShell {
@@ -3224,6 +3376,24 @@ footer {
   .readableArtCover {
     width: min(100%, 280px);
     justify-self: start;
+  }
+
+  .readableArtCaseHero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    min-height: auto;
+    margin-left: calc(50% - 50vw);
+    padding: 46px 24px;
+  }
+
+  .readableArtHeroTitle h1 {
+    font-size: clamp(58px, 18vw, 94px);
+  }
+
+  .readableArtHeroMeta {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: left;
   }
 
   .concertCaseHero {
