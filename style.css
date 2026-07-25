@@ -1418,17 +1418,19 @@ body.concertCasePage {
 .atlasHero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 470px);
-  gap: clamp(32px, 6vw, 90px);
-  align-items: center;
+  gap: clamp(28px, 4.5vw, 72px);
+  align-items: stretch;
   min-height: clamp(560px, 64vw, 820px);
   margin: 24px 0 0;
-  padding: clamp(54px, 8vw, 110px) clamp(42px, 6vw, 84px);
+  padding: 0 0 0 clamp(42px, 6vw, 84px);
   background: var(--atlas-blue);
   color: #fff;
 }
 
 .atlasHeroCopy {
   max-width: 780px;
+  align-self: center;
+  padding: clamp(54px, 8vw, 110px) 0;
 }
 
 .atlasKicker,
@@ -1465,9 +1467,12 @@ body.concertCasePage {
 
 .atlasHeroMark {
   margin: 0;
-  padding: 28px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 30px 70px rgba(9, 32, 64, 0.25);
+  padding: clamp(42px, 5vw, 78px) clamp(24px, 3vw, 46px);
+  background: #fff;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .atlasHeroMark img {
@@ -1528,9 +1533,10 @@ body.concertCasePage {
 }
 
 .atlasImageSpread {
-  margin: 0;
-  padding: clamp(54px, 7vw, 92px) clamp(36px, 5vw, 72px);
-  background: var(--atlas-paper);
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  padding: clamp(54px, 7vw, 92px) max(clamp(36px, 5vw, 72px), calc((100vw - 1440px) / 2 + 72px));
+  background: #fff;
 }
 
 .atlasImageSpread .atlasSpreadHeader {
@@ -1551,7 +1557,7 @@ body.concertCasePage {
   margin: 0;
   padding: 18px;
   background: #fff;
-  box-shadow: 0 24px 60px rgba(16, 44, 82, 0.1);
+  box-shadow: none;
 }
 
 .atlasProcessGrid img {
@@ -3335,6 +3341,10 @@ footer {
   .atlasHero {
     min-height: auto;
     padding: 42px 24px;
+  }
+
+  .atlasHeroCopy {
+    padding: 0;
   }
 
   .atlasHeroMark {
