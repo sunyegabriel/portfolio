@@ -209,14 +209,27 @@ a {
 
 .insightCard {
   margin-top: 34px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.insightHeader,
+.insightCard .introText {
+  max-width: none;
+}
+
+.insightHeader {
+  padding: 44px 34px 0;
+}
+
+.insightBodyCard {
+  margin-top: 28px;
   padding: clamp(34px, 5vw, 58px);
   border-radius: var(--radius);
   background: var(--card);
   box-shadow: var(--shadow);
-}
-
-.insightCard .introText {
-  max-width: none;
 }
 
 .introText {
@@ -245,7 +258,7 @@ a {
   position: relative;
   width: min(100%, 620px);
   min-height: 285px;
-  margin: 28px auto 46px;
+  margin: 28px auto 0;
   color: #111827;
   line-height: 0.9;
 }
