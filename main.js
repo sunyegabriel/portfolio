@@ -94,6 +94,55 @@ document.addEventListener('copy', (event) => {
   event.preventDefault();
 });
 
+const lightboxItems = document.querySelectorAll('[data-lightbox-src]');
+if (lightboxItems.length) {
+  const lightbox = document.createElement('div');
+  lightbox.className = 'mediaLightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Image preview');
+  lightbox.innerHTML = `
+    <div class="mediaLightboxPanel">
+      <button class="mediaLightboxClose" type="button" aria-label="Close image preview">&times;</button>
+      <img alt="">
+      <div class="mediaLightboxCaption"></div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('img');
+  const lightboxCaption = lightbox.querySelector('.mediaLightboxCaption');
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    lightboxImg.removeAttribute('src');
+  };
+  const openLightbox = (item) => {
+    lightboxImg.src = item.dataset.lightboxSrc;
+    lightboxImg.alt = item.querySelector('img')?.alt || item.dataset.lightboxCaption || 'Image preview';
+    lightboxImg.setAttribute('draggable', 'false');
+    lightboxCaption.textContent = item.dataset.lightboxCaption || '';
+    lightbox.classList.add('is-open');
+  };
+
+  lightboxItems.forEach((item) => {
+    item.addEventListener('click', () => openLightbox(item));
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(item);
+      }
+    });
+  });
+
+  lightbox.querySelector('.mediaLightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+  });
+}
+
 document.addEventListener('keydown', (event) => {
   const key = event.key.toLowerCase();
   const blocked =
