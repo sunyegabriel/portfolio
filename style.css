@@ -593,12 +593,20 @@ body.processingPage .sectionTag {
 .breadcrumb a {
   color: var(--muted);
   font-size: 15px;
-  font-weight: 650;
+  font-weight: 800;
   text-decoration: none;
 }
 
 .breadcrumb a:hover {
   color: var(--processing-pink);
+}
+
+.backLink,
+.atariBack,
+.heritageBack {
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.18s;
 }
 
 .processingHero {
