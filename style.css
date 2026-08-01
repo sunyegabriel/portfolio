@@ -571,6 +571,11 @@ body.processingPage .navLinks a:hover {
   color: #9f2f66;
 }
 
+body.processingPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):hover,
+body.processingPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):focus-visible {
+  color: var(--processing-pink);
+}
+
 body.processingPage .sectionTag {
   box-shadow: 0 4px 12px rgba(240, 100, 164, 0.26);
 }
@@ -1013,6 +1018,11 @@ body.processingPage .sectionTag {
   color: #fff;
 }
 
+.readableArtPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):hover,
+.readableArtPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):focus-visible {
+  color: var(--readable-red);
+}
+
 .readableArtPage .sectionTag {
   box-shadow: 0 4px 12px rgba(173, 45, 38, 0.22);
 }
@@ -1167,6 +1177,11 @@ body.concertCasePage {
 
 .concertCasePage .navLinks a:hover {
   background: var(--concert-soft-strong);
+  color: var(--concert-violet);
+}
+
+.concertCasePage main a:not(.tagChip):not(.btnPill):not(.btnGhost):hover,
+.concertCasePage main a:not(.tagChip):not(.btnPill):not(.btnGhost):focus-visible {
   color: var(--concert-violet);
 }
 
@@ -1398,6 +1413,11 @@ body.concertCasePage {
 
 .atlasPage .navLinks a:hover {
   background: var(--atlas-soft);
+  color: var(--atlas-blue);
+}
+
+.atlasPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):hover,
+.atlasPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):focus-visible {
   color: var(--atlas-blue);
 }
 
@@ -1657,6 +1677,11 @@ body.baoenCasePage {
 .baoenCasePage .navLinks a:hover {
   background: var(--baoen-rose);
   color: #fff;
+}
+
+.baoenCasePage main a:not(.tagChip):not(.btnPill):not(.btnGhost):hover,
+.baoenCasePage main a:not(.tagChip):not(.btnPill):not(.btnGhost):focus-visible {
+  color: var(--baoen-red);
 }
 
 .baoenCasePage .tagChip {
@@ -2147,6 +2172,11 @@ footer {
   color: rgba(255, 255, 255, 0.86);
   text-decoration: none;
   font-weight: 800;
+}
+
+.heritagePage a:not(.heritageObjectCard):hover,
+.heritagePage a:not(.heritageObjectCard):focus-visible {
+  color: var(--blue);
 }
 
 .heritageKicker {
@@ -2946,6 +2976,11 @@ footer {
 .atariPage .navLinks a:hover {
   background: var(--atari-hover);
   color: var(--atari-dark);
+}
+
+.atariPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):hover,
+.atariPage main a:not(.tagChip):not(.btnPill):not(.btnGhost):focus-visible {
+  color: var(--atari-green);
 }
 
 .atariPage .sectionTag {
