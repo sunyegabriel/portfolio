@@ -6,7 +6,14 @@
   <title>Readable Art | Gabriel Sun</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="readableArtPage">
+<body class="readableArtPage readableIntroPending">
+  <div class="readableArtIntro" data-readable-intro aria-label="Readable Art opening animation">
+    <video class="readableArtIntroVideo" autoplay muted playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
+      <source src="images/visualdesign/readableart/animation.mp4" type="video/mp4">
+    </video>
+    <button class="readableArtIntroSkip" type="button" data-readable-intro-skip>Skip intro</button>
+  </div>
+  <noscript><style>.readableArtIntro{display:none}.readableIntroPending{overflow:auto}</style></noscript>
   <header class="top">
     <nav class="navPill">
       <a class="brand" href="home.html"><span class="logo">GS</span><span><b>Gabriel Sun</b><small>Design &middot; Music &middot; Art &middot; History</small></span></a>
@@ -65,5 +72,6 @@
   </main>
   <footer>&copy; 2025 Gabriel Sun | Readable Art</footer>
   <script src="main.js"></script>
+  <script src="readable_art_intro.js"></script>
 </body>
 </html>
