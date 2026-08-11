@@ -1046,6 +1046,37 @@ body.readableIntroPending {
   background: #000;
 }
 
+.readableArtIntroPlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  min-height: 52px;
+  padding: 13px 22px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  background: rgba(173, 45, 38, 0.92);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.readableArtIntro.needs-interaction .readableArtIntroPlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.readableArtIntroPlay:hover,
+.readableArtIntroPlay:focus-visible {
+  background: var(--readable-rose);
+}
+
 .readableArtIntroSkip {
   position: absolute;
   right: clamp(20px, 3vw, 48px);
@@ -1067,17 +1098,6 @@ body.readableIntroPending {
 .readableArtIntroSkip:focus-visible {
   border-color: #fff;
   background: rgba(173, 45, 38, 0.88);
-}
-
-.readableArtIntro.needs-interaction::after {
-  content: "Click to play";
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  padding: 12px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  color: #fff;
-  font-weight: 800;
 }
 
 @media (max-width: 700px) {

@@ -2,6 +2,7 @@ const readableIntro = document.querySelector('[data-readable-intro]');
 
 if (readableIntro) {
   const introVideo = readableIntro.querySelector('video');
+  const playButton = readableIntro.querySelector('[data-readable-intro-play]');
   const skipButton = readableIntro.querySelector('[data-readable-intro-skip]');
   let introFinished = false;
 
@@ -21,14 +22,25 @@ if (readableIntro) {
   introVideo.addEventListener('error', finishIntro, { once: true });
   skipButton.addEventListener('click', finishIntro);
 
+  const playWithSound = () => {
+    introVideo.muted = false;
+    introVideo.currentTime = 0;
+    const playback = introVideo.play();
+
+    playback?.then(() => {
+      readableIntro.classList.remove('needs-interaction');
+    }).catch(() => {
+      readableIntro.classList.add('needs-interaction');
+    });
+  };
+
+  playButton.addEventListener('click', playWithSound);
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     finishIntro();
   } else {
+    introVideo.muted = false;
     const playback = introVideo.play();
     playback?.catch(() => readableIntro.classList.add('needs-interaction'));
-    readableIntro.addEventListener('click', (event) => {
-      if (event.target === skipButton || !introVideo.paused) return;
-      introVideo.play().catch(finishIntro);
-    });
   }
 }
