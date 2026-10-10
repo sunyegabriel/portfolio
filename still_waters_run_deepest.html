@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Still Waters Run Deepest | Gabriel Sun</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="still_waters.css" />
+</head>
+<body class="watersPage">
+  <header class="top">
+    <nav class="navPill">
+      <a class="brand" href="home.html"><span class="logo">GS</span><span><b>Gabriel Sun</b><small>Design &middot; Music &middot; Art &middot; History</small></span></a>
+      <div class="navSpacer"></div>
+      <div class="navLinks"><a href="index.html">Opening</a><a class="active" href="home.html#portfolio">Portfolio</a><a href="home.html#about">About</a><a href="contact.html">Contact</a></div>
+    </nav>
+  </header>
+
+  <main class="watersShell">
+    <a class="backLink" href="home.html#portfolio">&larr; Back to Projects</a>
+    <section class="watersHero">
+      <div class="watersHeroCopy">
+        <p class="watersEyebrow">Game Design &middot; Sound Design &middot; Godot</p>
+        <h1>Still Waters<br><em>Run Deepest.</em></h1>
+        <p class="watersLead">A playable vertical slice where a seemingly peaceful pond shifts between 3D exploration, 2D combat, and an unsettling reversal of the familiar hero story.</p>
+        <div class="watersActions"><a href="#cutscene">Watch cutscene <span>&darr;</span></a><a href="#boss">Meet the Dragonfly <span>&darr;</span></a></div>
+      </div>
+      <figure class="watersHeroVisual"><img src="images/gamedesign/stillwaters/boss_battle.gif" alt="Dragonfly Boss flying into the battle scene"></figure>
+      <dl class="watersFacts">
+        <div><dt>Format</dt><dd>Playable game vertical slice</dd></div>
+        <div><dt>Engine</dt><dd>Godot &middot; GDScript</dd></div>
+        <div><dt>Role</dt><dd>Sound systems, Dragonfly Boss VFX, visual and gameplay integration</dd></div>
+      </dl>
+    </section>
+
+    <section class="watersStatement watersSection" id="overview">
+      <p class="watersSectionNo">01 / The premise</p>
+      <div><h2>A pond that asks the player to reconsider their own victory.</h2><p>The game alternates between spatial 3D exploration and 2D side-scrolling combat. The player begins as a frog cast as the pond&rsquo;s defender, but encounters and aftermath gradually suggest that the frogs may be the force controlling its residents.</p></div>
+    </section>
+
+    <section class="watersShowcase watersSection" id="cutscene">
+      <div class="watersSectionHeading"><p class="watersSectionNo">02 / Cutscene</p><h2>From fight to doubt.</h2><p>The short cutscene preserves the emotional turn after combat: victory does not resolve the story, it makes its earlier actions harder to read.</p></div>
+      <div class="watersVideo"><iframe src="https://www.youtube-nocookie.com/embed/S5P5fq-FZbk?rel=0" title="Still Waters Run Deepest cutscene" loading="lazy" allowfullscreen></iframe></div>
+    </section>
+
+    <section class="watersWorld watersSection">
+      <div class="watersSectionHeading"><p class="watersSectionNo">03 / World system</p><h2>Explore in depth.<br>Fight in profile.</h2><p>Low-poly pond spaces are paired with pixel-style characters and 2D encounters, so the transition between modes feels like a change in both scale and tension.</p></div>
+      <div class="watersWorldGrid">
+        <figure class="watersWorldLarge"><img src="images/gamedesign/stillwaters/pond_overview.png" alt="Low-poly pond exploration scene"></figure>
+        <figure><img src="images/gamedesign/stillwaters/pond_platform.png" alt="Platforming above the pond"></figure>
+        <figure><img src="images/gamedesign/stillwaters/pond_npc.png" alt="Frog character meeting a pond resident"></figure>
+        <figure><img src="images/gamedesign/stillwaters/pond_dialogue.png" alt="Dialogue with the pond merchant"></figure>
+      </div>
+    </section>
+
+    <section class="watersBoss watersSection" id="boss">
+      <div class="watersBossIntro"><p class="watersSectionNo">04 / Dragonfly Boss</p><h2>Designed to move,<br><em>aim, dive, and fall.</em></h2><p>The Dragonfly developed from an early blue-purple direction into a deep red antagonist that contrasts with the frog. Its animation system moves through wing-flapping, hovering, dives, player-directed projectiles, hit reactions, and a staged defeat.</p></div>
+      <div class="watersBossImages"><figure class="watersBossGif"><img src="images/gamedesign/stillwaters/boss_battle.gif" alt="Animated Dragonfly Boss actions"></figure><figure class="watersBossSheet"><img src="images/gamedesign/stillwaters/boss_actions.jpg" alt="Dragonfly Boss action frames"></figure></div>
+      <figure class="watersBossConcept"><img src="images/gamedesign/stillwaters/dragonfly_final.png" alt="Final Dragonfly design development"></figure>
+    </section>
+
+    <section class="watersSound watersSection">
+      <p class="watersSectionNo">05 / Sound as play</p>
+      <div><h2>Sound is a state system, not an afterthought.</h2><p>My work moved from the project&rsquo;s sonic moodboard into an integrated Godot audio system: menu and exploration music, pond ambience, surface-aware footsteps, jumps, attacks, grappling, UI feedback, combat phases, and the boss aftermath.</p></div>
+      <ol><li><b>Recognition</b><span>An opening cue signals the beginning of combat.</span></li><li><b>Action</b><span>Looping battle music leaves room for movement, impacts, and warnings.</span></li><li><b>Doubt</b><span>After the Dragonfly falls, music withdraws and pond ambience takes over.</span></li></ol>
+    </section>
+
+    <section class="watersBuild watersSection">
+      <p class="watersSectionNo">06 / Playable build</p>
+      <h2>The current build is a desktop Godot export.</h2>
+      <p>The available project files are a Windows executable and Godot <code>.pck</code> package, which cannot run inside a web page. A browser-playable version can be added after exporting the project from Godot for Web, which would provide the required HTML, JavaScript/WebAssembly, and web data files.</p>
+      <span class="watersBuildBadge">Desktop build available &middot; Web export pending</span>
+    </section>
+  </main>
+  <footer>&copy; 2025 Gabriel Sun | Still Waters Run Deepest</footer>
+  <script src="still_waters.js"></script>
+</body>
+</html>

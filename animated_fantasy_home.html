@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Animated Fantasy Home — a Blender offline-animation project by Gabriel Sun.">
+  <title>Animated Fantasy Home — Gabriel Sun</title>
+  <link rel="stylesheet" href="animated_fantasy_home.css">
+</head>
+<body>
+  <a class="skip" href="#story">Skip to project</a>
+  <header class="topbar">
+    <a class="brand" href="home.html#projects" aria-label="Back to Gabriel Sun portfolio">
+      <span class="brand-mark">GS</span><span>Gabriel Sun</span>
+    </a>
+    <a class="return" href="home.html#projects">All projects <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Visual Design · Offline Animation · Blender</p>
+        <p class="cn-title" lang="zh">动漫奇幻之家</p>
+        <h1 id="project-title">Animated<br><em>Fantasy Home</em></h1>
+        <p class="lede">A 25-second animated room where a doorway becomes an invitation: screens flicker, characters answer, sunlight turns, and the camera finds a new point of view.</p>
+        <dl class="project-meta">
+          <div><dt>Format</dt><dd>3D short animation</dd></div>
+          <div><dt>Made with</dt><dd>Blender + CapCut</dd></div>
+          <div><dt>Focus</dt><dd>Camera, character &amp; light</dd></div>
+        </dl>
+        <a class="play-link" href="#film">Watch the film <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-image">
+        <img src="images/visualdesign/animatedfantasyhome/rendering-01-eevee.png" alt="A colourful rendered fantasy room filled with animated characters and screens">
+        <figcaption>Rendered in Blender · EEVEE</figcaption>
+      </figure>
+      <div class="sun sun-one" aria-hidden="true"></div><div class="sun sun-two" aria-hidden="true"></div>
+    </section>
+
+    <section class="film section" id="film" aria-labelledby="film-title">
+      <div class="section-intro"><p class="eyebrow">01 / The finished movement</p><h2 id="film-title">Step <em>inside.</em></h2></div>
+      <div class="film-frame">
+        <video controls playsinline preload="metadata" poster="images/visualdesign/animatedfantasyhome/rendering-01-eevee.png">
+          <source src="images/visualdesign/animatedfantasyhome/animation.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+        <p class="film-caption">25 sec · two connected camera shots · original Blender animation</p>
+      </div>
+    </section>
+
+    <section class="story section" id="story" aria-labelledby="story-title">
+      <div class="section-intro story-intro"><p class="eyebrow">02 / Plan before pixels</p><h2 id="story-title">A room with<br><em>a route.</em></h2><p>The storyboard maps the camera’s passage from character gestures to a final upward view, making the space feel like a small world rather than a static set.</p></div>
+      <figure class="storyboard">
+        <img src="images/visualdesign/animatedfantasyhome/storyboard.jpg" alt="Eight-panel storyboard of the fantasy home's character actions and camera directions">
+        <figcaption>Original storyboard: character actions, screen transformations, camera pans, zooms, and the closing aerial beat.</figcaption>
+      </figure>
+    </section>
+
+    <section class="choreography" aria-labelledby="choreography-title">
+      <div class="section-intro"><p class="eyebrow">03 / Motion language</p><h2 id="choreography-title">Three systems,<br><em>one living room.</em></h2></div>
+      <div class="motion-grid">
+        <article class="motion-card"><span>01</span><h3>Camera choreography</h3><p>An exterior entrance, an open door, an interior pan, and a final overhead rotation give the film a clear spatial rhythm.</p></article>
+        <article class="motion-card"><span>02</span><h3>Characters in response</h3><p>Shape keys deform selected forms while object transforms animate gestures, rotations, and location changes in dialogue with the screens.</p></article>
+        <article class="motion-card"><span>03</span><h3>Light and screens</h3><p>Two masked playback videos turn the TVs into active surfaces; rotating sunlight changes the room’s colour and atmosphere around them.</p></article>
+      </div>
+    </section>
+
+    <section class="renders section" aria-labelledby="renders-title">
+      <div class="section-intro"><p class="eyebrow">04 / Building the world</p><h2 id="renders-title">From scene<br><em>to atmosphere.</em></h2><p>Lighting studies from the Blender scene test how the same interior changes between an open, saturated daytime world and a darker threshold view.</p></div>
+      <div class="render-grid">
+        <figure class="render wide"><img src="images/visualdesign/animatedfantasyhome/rendering-03-eevee.png" alt="Eevee render from inside the animated fantasy home"><figcaption>Interior study · EEVEE</figcaption></figure>
+        <figure class="render"><img src="images/visualdesign/animatedfantasyhome/rendering-02-cycles.png" alt="Cycles render looking through the doorway into the fantasy home"><figcaption>Threshold study · Cycles</figcaption></figure>
+        <figure class="render"><img src="images/visualdesign/animatedfantasyhome/rendering-04-cycles.png" alt="Cycles render of details inside the fantasy home"><figcaption>Detail study · Cycles</figcaption></figure>
+        <figure class="render wide"><img src="images/visualdesign/animatedfantasyhome/rendering-05-eevee.png" alt="Eevee render of the animated fantasy home scene"><figcaption>World study · EEVEE</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="process section" aria-labelledby="process-title">
+      <div class="process-copy"><p class="eyebrow">05 / Problem-solving in 3D</p><h2 id="process-title">Keep the<br><em>character together.</em></h2><p>The character was assembled from separate objects. To prevent pieces from drifting apart during location animation, the torso became the parent object and the head and limbs were kept as transformed children. A separate origin correction stopped the eyes rotating around the feet.</p></div>
+      <aside class="source-card"><p class="source-label">3D source note</p><p>The original scene OBJ and material file were reviewed for this case study. It is retained as a production asset rather than embedded here: the model is over 100 MB and its material file points to local texture paths, so a web embed would not reproduce the authored look reliably.</p><p class="source-tail">The project’s render studies preserve the intended visual result.</p></aside>
+    </section>
+  </main>
+  <footer><span>Animated Fantasy Home</span><span>Gabriel Sun · Visual Design</span><a href="home.html#projects">Back to portfolio ↑</a></footer>
+  <script src="animated_fantasy_home.js"></script>
+</body>
+</html>
